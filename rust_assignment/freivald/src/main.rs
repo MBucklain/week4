@@ -7,8 +7,10 @@ impl Freivald {
     // TODO: Create constructor for object
     fn new(array_size: usize) -> Self {
         todo!()
-        // Generate random number
+        let mut rng = rand::thread_rng();// Generate random number
+        
         // Populate vector with values r^i for i=0..matrix_size
+        
         // Return freivald value with this vector as its x value
     }
 

@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    reactStrictMode: true,
-    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-        if (!isServer) {
+    reactStrictMode: true,//is sort of a helper component that will help you write better react components
+    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {//configratution befor changes buildId: String - The build id, used as a unique identifier between builds
+        // dev: Boolean - Indicates if the compilation will be done in development
+        // isServer: Boolean - It's true for server-side compilation, and false for client-side compilation
+        // defaultLoaders: Object - Default loaders used internally by Next.js:
+        // babel: Object - Default babel-loader configuration
+        
+        if (!isServer) {//will be true if it's client side
             config.plugins.push(
                 new webpack.ProvidePlugin({
                     global: "global"
@@ -21,10 +26,10 @@ const nextConfig = {
                 path: false
             }
 
-            return config
+            return config//rturn cnfig when client side
         }
 
-        return config
+        return config //if it's server side the confiugrations will be sent without changes
     }
 }
 
